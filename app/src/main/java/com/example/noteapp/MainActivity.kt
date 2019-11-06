@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         var dbManager = DbManager(this)
         val projections = arrayOf("ID", "Title", "Description")
         val selectionArgs = arrayOf(title)
-        val cursor = dbManager.Query(projections, "Title like ?", selectionArgs, "Title")
+        val cursor = dbManager.query(projections, "Title like ?", selectionArgs, "Title")
         listNotes.clear()
         if (cursor.moveToFirst()) {
             do {
@@ -102,14 +102,13 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    inner class MyNotesAdapter : BaseAdapter{
+    inner class MyNotesAdapter(context: Context, listNotesArray: ArrayList<Note>) : BaseAdapter() {
 
         var listNotesAdapter = ArrayList<Note>()
-        var context:Context? = null
+        var context:Context? = context
 
-        constructor(context: Context, listNotesArray: ArrayList<Note>) : super (){
+        init {
             this.listNotesAdapter = listNotesAdapter
-            this.context = context
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
