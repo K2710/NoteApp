@@ -22,12 +22,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seleccionar categoria:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add_24px"
+                        android:id="@+id/btnAdd"
+                        />
+                </LinearLayout>
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner" />
                 <EditText
                     android:id="@+id/titleEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="Enter Title"
+                    android:hint="Titulo"
                     android:singleLine="true"
                     android:padding="10dp"
                     android:textStyle="bold"/>
@@ -37,21 +61,21 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="top"
-                    android:hint="Enter description"
+                    android:hint="Descripcion"
                     android:minHeight="100dp"
                     android:padding="10dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <Button
             android:id="@+id/addBtn"
             style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:text="Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:onClick="addFunc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="Agregar" />
 
     </LinearLayout>
 
