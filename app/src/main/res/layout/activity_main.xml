@@ -7,11 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/notelistview"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:divider="@null"
-        android:dividerHeight="1dp"/>
+      />
 
 </LinearLayout>
